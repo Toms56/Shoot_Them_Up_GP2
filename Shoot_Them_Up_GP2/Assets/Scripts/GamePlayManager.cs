@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GamePlayManager : MonoBehaviour
 {
@@ -15,4 +16,21 @@ public class GamePlayManager : MonoBehaviour
     {
         
     }
+     public void onClick_Retry()
+        {
+            //SceneManager.UnloadSceneAsync(1);
+            SceneManager.LoadScene("Level1");
+        }
+    
+        public void onClick_Menu()
+        {
+            //SceneManager.UnloadSceneAsync(1);
+            SceneManager.LoadScene("MainMenu"); 
+        }
+    
+        public void exitGame()
+        {
+            Application.Quit();
+            Debug.Log("Game is exiting");
+        }
 }
