@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     {
         objectWitdh = transform.GetComponent<SpriteRenderer>().bounds.extents.x; //give the player width
         objectHeight = transform.GetComponent<SpriteRenderer>().bounds.extents.y; //give the player height
-        screenBounds = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, mainCamera.transform.position.z));
+        screenBounds = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, mainCamera.transform.position.z)); //screen to world point convert 2d pos to 3d pos
     }
 
     // Update is called once per frame
@@ -59,8 +59,8 @@ public class Player : MonoBehaviour
     void LateUpdate()
     {
         Vector3 viewPos = transform.position;
-        viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x * -1 + objectWitdh, screenBounds.x - objectWitdh);
-        viewPos.y = Mathf.Clamp(viewPos.y, screenBounds.y * -1 + objectHeight, screenBounds.y - objectHeight);
+        viewPos.x = Mathf.Clamp(viewPos.x, -screenBounds.x + objectWitdh + mainCamera.transform.position.x * 2, screenBounds.x - objectWitdh); //clamp(value,min,max)
+        viewPos.y = Mathf.Clamp(viewPos.y, -screenBounds.y + objectHeight + mainCamera.transform.position.y * 2, screenBounds.y - objectHeight);
         transform.position = viewPos;
     }
 }
