@@ -4,23 +4,63 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public GameObject shoot;
+
+    public Camera mainCamera;
+
+    public Vector3 screenBounds;
+
+    private float time;
+    private float objectWitdh;
+    private float objectHeight;
     private float speed = 5f;
+    private float fireRate = 0.5f;
+    private Vector3 shootOffSet = new Vector3(0, 0.3f, 0);
     // Start is called before the first frame update
     void Start()
     {
-        
+        objectWitdh = transform.GetComponent<SpriteRenderer>().bounds.extents.x; //give the player width
+        objectHeight = transform.GetComponent<SpriteRenderer>().bounds.extents.y; //give the player height
+        screenBounds = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, mainCamera.transform.position.z));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("z"))
+        if (Input.GetKey("z"))
         {
-            transform.position = new Vector3(0,1 * Time.deltaTime * speed,0);
+            transform.Translate(Vector3.up * speed * Time.deltaTime);
         }
-        if (Input.GetKeyDown("s"))
+
+        if (Input.GetKey("s"))
         {
-            transform.position = new Vector3(0, -1 * Time.deltaTime * speed, 0);
+            transform.Translate(Vector3.down * speed * Time.deltaTime);
         }
+
+        if (Input.GetKey("q"))
+        {
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
+        }
+
+        if (Input.GetKey("d"))
+        {
+            transform.Translate(Vector3.right * speed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            if (Time.time > time)
+            {
+                Instantiate(shoot, transform.position + shootOffSet, transform.rotation);
+                time = Time.time + fireRate;
+            }
+        }
+    }
+
+    void LateUpdate()
+    {
+        Vector3 viewPos = transform.position;
+        viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x * -1 + objectWitdh, screenBounds.x - objectWitdh);
+        viewPos.y = Mathf.Clamp(viewPos.y, screenBounds.y * -1 + objectHeight, screenBounds.y - objectHeight);
+        transform.position = viewPos;
     }
 }
