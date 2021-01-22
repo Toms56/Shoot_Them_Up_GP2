@@ -4,24 +4,33 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    public float bulletSpeed = 8f;
+    public float bulletSpeed;
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, 4f);
+        Destroy(gameObject, 2.5f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.up * bulletSpeed * Time.deltaTime);
+        if (gameObject.tag == "EnnemyBullet")
+        {
+            bulletSpeed = 5f;
+            transform.Translate(Vector3.down * bulletSpeed * Time.deltaTime);
+        }
+        else if(gameObject.tag == "HeroBullet")
+        {
+            bulletSpeed = 8f;
+            transform.Translate(Vector3.up * bulletSpeed * Time.deltaTime);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "HeroBullet" || other.gameObject.tag == "EnemyBullet")
         {
-            Destroy(other.gameObject);
+            Destroy(gameObject);
         }
     }
 }
