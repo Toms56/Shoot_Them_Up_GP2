@@ -10,15 +10,12 @@ public class Player : MonoBehaviour
 
     public Vector3 screenBounds;
 
-    private float time;
-    private float objectWitdh;
-    private float objectHeight;
-    private float speed = 5f;
-    private float fireRate = 0.5f;
+    private float fireRate = 0.5f, speed = 5f, time, objectWitdh, objectHeight;
     private Vector3 shootOffSet = new Vector3(0, 0.3f, 0);
     // Start is called before the first frame update
     void Start()
     {
+
         objectWitdh = transform.GetComponent<SpriteRenderer>().bounds.extents.x; //give the player width
         objectHeight = transform.GetComponent<SpriteRenderer>().bounds.extents.y; //give the player height
         screenBounds = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, mainCamera.transform.position.z)); //screen to world point convert 2d pos to 3d pos
