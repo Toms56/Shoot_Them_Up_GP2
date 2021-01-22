@@ -11,7 +11,7 @@ public class MenuManager : MonoBehaviour
 
     public void OnClick_StartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
     /*public void OnClick_CommandeMenu()

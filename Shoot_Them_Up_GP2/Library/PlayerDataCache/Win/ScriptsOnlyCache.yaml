@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - BulletScript
     - Ennemy
     - EventSystem
+    - MenuManager
     - Player
     - Spawner
     Unity.Rider.Editor.dll:
@@ -98,6 +99,14 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11318}
+    - Class: 114
+      Script: {instanceID: 11820}
+    - Class: 114
+      Script: {instanceID: 13036}
+    - Class: 115
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -370,7 +379,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 1e52fd9eee4b05d17f6845fd1f8155a4
+      Hash: 3f0d297cd9b247c4e4355f37549d34c0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EventSystem
@@ -569,5 +578,6 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/Level1.unity
+  - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/MainMenu.unity
   playerPath: C:/Users/gwend/OneDrive/Bureau/LG,MV,NS,TT, shootergame/Shoot_Them_Up_GP2.exe
