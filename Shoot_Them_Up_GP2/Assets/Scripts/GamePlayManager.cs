@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GamePlayManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class GamePlayManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
      public void onClick_Retry()
         {

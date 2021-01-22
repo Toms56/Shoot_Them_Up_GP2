@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 
     public Vector3 screenBounds;
 
-    private float fireRate = 0.5f, speed = 5f, time, objectWitdh, objectHeight;
+    private float fireRate = 0.2f, speed = 5f, time, objectWitdh, objectHeight;
     private Vector3 shootOffSet = new Vector3(0, 0.3f, 0);
     // Start is called before the first frame update
     void Start()
