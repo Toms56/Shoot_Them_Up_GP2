@@ -7,9 +7,13 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="BulletScript.cs" t="Include" />
+          <e p="Ennemy.cs" t="Include" />
+          <e p="EventSystem.cs" t="Include" />
           <e p="GamePlayManager.cs" t="Include" />
           <e p="MenuManager.cs" t="Include" />
           <e p="Player.cs" t="Include" />
+          <e p="Spawner.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
