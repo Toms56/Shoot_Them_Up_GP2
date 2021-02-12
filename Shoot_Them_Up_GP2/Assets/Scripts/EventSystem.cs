@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EventSystem : MonoBehaviour
 {
-    public Text ScoreTxt;
+    public Text ScoreTxt, CommandTxt;
     public float Score = 0;
     // Start is called before the first frame update
     void Start()
@@ -21,5 +21,6 @@ public class EventSystem : MonoBehaviour
             Score = 0;
         }
         ScoreTxt.text = "Score: " + Score;
+        CommandTxt.text = " les commandes sont : z,q,s,d,barre espace et échap";
     }
 }
