@@ -6,16 +6,30 @@ using UnityEngine.UI;
 
 public class GamePlayManager : MonoBehaviour
 {
+    public static GamePlayManager Instance;
+    public Text scoreText;
+    public float score;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        if( !Instance )
+        {
+            Instance = this;
+        }
+        else if(Instance)
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
-        
+        score = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        scoreText.text = "Score : " + score;
     }
      public void onClick_Retry()
         {

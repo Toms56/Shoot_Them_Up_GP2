@@ -9,9 +9,9 @@ public class Player : MonoBehaviour
 
     public Camera mainCamera;
 
-    public Vector3 screenBounds;
+    public Vector3 screenBounds, mousePointer;
 
-    private float fireRate = 0.2f, speed = 5f, time, objectWitdh, objectHeight;
+    private float fireRate = 0.1f, speed = 0.1f, time, objectWitdh, objectHeight;
     private Vector3 shootOffSet = new Vector3(0, 0.3f, 0);
     // Start is called before the first frame update
     void Start()
@@ -25,24 +25,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("z"))
+        mousePointer = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        if (transform.position != mousePointer)
         {
-            transform.Translate(Vector3.up * speed * Time.deltaTime);
-        }
+            transform.position = Vector3.Lerp(transform.position, mousePointer, Time.deltaTime * speed * 8f);
 
-        if (Input.GetKey("s"))
-        {
-            transform.Translate(Vector3.down * speed * Time.deltaTime);
-        }
-
-        if (Input.GetKey("q"))
-        {
-            transform.Translate(Vector3.left * speed * Time.deltaTime);
-        }
-
-        if (Input.GetKey("d"))
-        {
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.Space))
         {
@@ -65,5 +52,14 @@ public class Player : MonoBehaviour
         viewPos.x = Mathf.Clamp(viewPos.x, -screenBounds.x + objectWitdh + mainCamera.transform.position.x * 2, screenBounds.x - objectWitdh); //clamp(value,min,max)
         viewPos.y = Mathf.Clamp(viewPos.y, -screenBounds.y + objectHeight + mainCamera.transform.position.y * 2, screenBounds.y - objectHeight);
         transform.position = viewPos;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(gameObject.tag == "Ennemy")
+        {
+            GamePlayManager.Instance.score -= 10;
+            Destroy(collision.gameObject);
+        }
     }
 }
