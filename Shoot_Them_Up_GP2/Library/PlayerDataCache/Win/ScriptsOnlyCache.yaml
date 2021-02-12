@@ -4,10 +4,12 @@ ScriptsOnlyBuild:
     - BulletScript
     - Ennemy
     - EventSystem
+    - GamePlayManager
     - MenuManager
     - Player
     - Spawner
     Unity.Rider.Editor.dll:
+    - Packages.Rider.Editor.RiderScriptEditorData
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -16,8 +18,10 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/Level1.unity:
@@ -50,13 +54,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11400}
     - Class: 114
+      Script: {instanceID: 11438}
+    - Class: 114
       Script: {instanceID: 11820}
     - Class: 114
       Script: {instanceID: 12060}
     - Class: 114
       Script: {instanceID: 12092}
     - Class: 114
+      Script: {instanceID: 12208}
+    - Class: 114
       Script: {instanceID: 12362}
+    - Class: 114
+      Script: {instanceID: 12538}
     - Class: 114
       Script: {instanceID: 12688}
     - Class: 114
@@ -101,16 +111,36 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 11234}
+    - Class: 114
       Script: {instanceID: 11318}
     - Class: 114
+      Script: {instanceID: 11396}
+    - Class: 114
+      Script: {instanceID: 11438}
+    - Class: 114
       Script: {instanceID: 11820}
+    - Class: 114
+      Script: {instanceID: 12208}
+    - Class: 114
+      Script: {instanceID: 12688}
     - Class: 114
       Script: {instanceID: 13036}
     - Class: 115
       Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -331,7 +361,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: f76c56514f6d0ae58a6aecc048baf460
+      Hash: d485d21057c8ae60aeadc39eabbf4cc3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -433,7 +463,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: efc7448356cae51fecd7cd8bb7a5a279
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GamePlayManager
@@ -577,7 +607,6 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 5
   scenePathNames:
+  - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Level1.unity
-  - Assets/Scenes/MainMenu.unity
-  - Assets/Scenes/MainMenu.unity
-  playerPath: C:/Users/gwend/OneDrive/Bureau/LG,MV,NS,TT, shootergame/Shoot_Them_Up_GP2.exe
+  playerPath: F:/Culture Pro & Analyse de jeux/Shoot_Them_Up/Build12_02/Shoot_Them_Up_GP2.exe
