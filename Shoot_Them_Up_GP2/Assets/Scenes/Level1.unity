@@ -1124,7 +1124,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScoreTxt: {fileID: 151027959}
   CommandTxt: {fileID: 1433133839}
-  Score: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

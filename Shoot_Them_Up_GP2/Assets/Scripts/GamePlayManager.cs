@@ -63,13 +63,13 @@ public class GamePlayManager : MonoBehaviour
      public void onClick_Retry()
         {
             //SceneManager.UnloadSceneAsync(1);
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene(2);
         }
     
         public void onClick_Menu()
         {
             //SceneManager.UnloadSceneAsync(1);
-            SceneManager.LoadScene("MainMenu"); 
+            SceneManager.LoadScene(0); 
         }
     
         public void exitGame()
