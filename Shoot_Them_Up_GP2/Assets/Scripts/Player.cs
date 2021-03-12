@@ -7,19 +7,25 @@ public class Player : MonoBehaviour
 {
     public GameObject shoot;
 
+    public HealthBar healthBar;
+
     public Camera mainCamera;
 
     public Vector3 screenBounds, mousePointer;
+
+    public int playerMaxHealthPoint, CurrentplayerHealth;
 
     private float fireRate = 0.3f, speed = 0.1f, time, objectWitdh, objectHeight;
     private Vector3 shootOffSet = new Vector3(0, 0.3f, 0);
     // Start is called before the first frame update
     void Start()
     {
-
+        playerMaxHealthPoint = 20;
         objectWitdh = transform.GetComponent<SpriteRenderer>().bounds.extents.x; //give the player width
         objectHeight = transform.GetComponent<SpriteRenderer>().bounds.extents.y; //give the player height
         screenBounds = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, mainCamera.transform.position.z)); //screen to world point convert 2d pos to 3d pos
+        CurrentplayerHealth = playerMaxHealthPoint;
+        healthBar.SetMaxHealth(playerMaxHealthPoint);
     }
 
     // Update is called once per frame
@@ -43,6 +49,15 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+        if (CurrentplayerHealth >= playerMaxHealthPoint)
+        {
+            CurrentplayerHealth = playerMaxHealthPoint;
+        }
+        else if(CurrentplayerHealth <= 0)
+        {
+            CurrentplayerHealth = 0;
+            SceneManager.LoadScene(1);
+        }
     }
 
     void LateUpdate()
@@ -58,6 +73,8 @@ public class Player : MonoBehaviour
         if(collision.gameObject.tag != "HeroBullet")
         {
             Destroy(collision.gameObject);
+            CurrentplayerHealth--;
+            healthBar.SetHealth(CurrentplayerHealth);
         }
         if (collision.gameObject.TryGetComponent<Ennemy>(out Ennemy ennemy))
         {
