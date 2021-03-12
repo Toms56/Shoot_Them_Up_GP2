@@ -58,6 +58,11 @@ public class GamePlayManager : MonoBehaviour
             }
         }
         scoreText.text = "Score : " + score;
+
+        if (score >= 1550)
+        {
+            SceneManager.LoadScene(1);
+        }
     }
     
      public void onClick_Retry()
