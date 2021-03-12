@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Escape))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(0);
         }
     }
 

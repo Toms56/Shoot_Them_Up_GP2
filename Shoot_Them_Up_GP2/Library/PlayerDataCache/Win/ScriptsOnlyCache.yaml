@@ -5,11 +5,15 @@ ScriptsOnlyBuild:
     - Ennemy
     - EventSystem
     - GamePlayManager
+<<<<<<< HEAD
     - MenuEnnemy
+=======
+>>>>>>> 06286359282a30763e7ff8f34669e45cf72603f1
     - MenuManager
     - Player
     - Spawner
     Unity.Rider.Editor.dll:
+    - Packages.Rider.Editor.RiderScriptEditorData
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -54,11 +58,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11400}
     - Class: 114
+      Script: {instanceID: 11438}
+    - Class: 114
       Script: {instanceID: 11820}
     - Class: 114
       Script: {instanceID: 12060}
     - Class: 114
       Script: {instanceID: 12092}
+    - Class: 114
+      Script: {instanceID: 12208}
     - Class: 114
       Script: {instanceID: 12362}
     - Class: 114
@@ -132,8 +140,11 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
+<<<<<<< HEAD
     - Class: 212
       Script: {instanceID: 0}
+=======
+>>>>>>> 06286359282a30763e7ff8f34669e45cf72603f1
     - Class: 213
       Script: {instanceID: 0}
     - Class: 222
@@ -463,7 +474,11 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: 8ad90ab74f26bb8f9088f5aaa057bd03
+=======
+      Hash: efc7448356cae51fecd7cd8bb7a5a279
+>>>>>>> 06286359282a30763e7ff8f34669e45cf72603f1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GamePlayManager
@@ -613,6 +628,12 @@ ScriptsOnlyBuild:
     className: MenuEnnemy
   platform: 5
   scenePathNames:
+<<<<<<< HEAD
   - Assets/Scenes/Level1.unity
   - Assets/Scenes/MainMenu.unity
   playerPath: C:/Users/gwend/OneDrive/Bureau/LG,MV,NS,TT, shootergame/Shoot_Them_Up_GP2.exe
+=======
+  - Assets/Scenes/MainMenu.unity
+  - Assets/Scenes/Level1.unity
+  playerPath: F:/Culture Pro & Analyse de jeux/Shoot_Them_Up/Build12_02/Shoot_Them_Up_GP2.exe
+>>>>>>> 06286359282a30763e7ff8f34669e45cf72603f1

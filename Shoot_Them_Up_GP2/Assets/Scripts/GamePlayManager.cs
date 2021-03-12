@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class GamePlayManager : MonoBehaviour
 {
+
+    [SerializeField]
+    private bool pause = false;
+
+    public GameObject panePause;
     public static GamePlayManager Instance;
     public Text scoreText;
     public float score;
@@ -30,8 +35,31 @@ public class GamePlayManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (pause == false)
+        {
+            Time.timeScale = 1;
+        }
+        else
+        {
+            Time.timeScale = 0;
+        }
+
+        if (Input.GetKey(KeyCode.P))
+        {
+            if (pause == true)
+            {
+                pause = false;
+                panePause.SetActive(false);
+            }
+            else
+            {
+                pause = true;
+                panePause.SetActive(true);
+            }
+        }
         scoreText.text = "Score : " + score;
     }
+    
      public void onClick_Retry()
         {
             //SceneManager.UnloadSceneAsync(1);
