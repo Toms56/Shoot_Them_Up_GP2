@@ -6,16 +6,24 @@ public class Spawner : MonoBehaviour
 {
     public GameObject[] Ennemy;
     private bool moveLeft = false;
-    private float speed = 3f;
+    private float speed = 3f, delay = 2f, time;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnEnnemy", 0f, 2f);
+        time = Time.time;
+        //InvokeRepeating("SpawnEnnemy", 0f, 2f);
     }
-
     // Update is called once per frame
     void Update()
     {
+        if(GamePlayManager.nbr < 3)
+        {
+            if(Time.time > time)
+            {
+                SpawnEnnemy();
+                time = Time.time + delay;
+            }
+        }
         if (!moveLeft)
         {
             transform.Translate(Vector3.right * speed * Time.deltaTime);
@@ -35,6 +43,7 @@ public class Spawner : MonoBehaviour
     }
     void SpawnEnnemy()
     {
-        Instantiate(Ennemy[Random.Range(0, Ennemy.Length)],transform.position,transform.rotation);
+        Instantiate(Ennemy[Random.Range(0, Ennemy.Length)], transform.position, transform.rotation);
+        GamePlayManager.nbr += 1;
     }
 }

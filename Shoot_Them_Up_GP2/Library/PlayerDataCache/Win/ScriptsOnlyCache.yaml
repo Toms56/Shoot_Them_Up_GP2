@@ -4,6 +4,8 @@ ScriptsOnlyBuild:
     - BulletScript
     - Ennemy
     - EventSystem
+    - GamePlayManager
+    - MenuEnnemy
     - MenuManager
     - Player
     - Spawner
@@ -16,8 +18,10 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/Level1.unity:
@@ -57,6 +61,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12092}
     - Class: 114
       Script: {instanceID: 12362}
+    - Class: 114
+      Script: {instanceID: 12538}
     - Class: 114
       Script: {instanceID: 12688}
     - Class: 114
@@ -101,16 +107,40 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 11234}
+    - Class: 114
       Script: {instanceID: 11318}
+    - Class: 114
+      Script: {instanceID: 11396}
+    - Class: 114
+      Script: {instanceID: 11438}
     - Class: 114
       Script: {instanceID: 11820}
     - Class: 114
+      Script: {instanceID: 12208}
+    - Class: 114
+      Script: {instanceID: 12688}
+    - Class: 114
       Script: {instanceID: 13036}
+    - Class: 114
+      Script: {instanceID: 17378}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -331,7 +361,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: f76c56514f6d0ae58a6aecc048baf460
+      Hash: d485d21057c8ae60aeadc39eabbf4cc3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -379,7 +409,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 3f0d297cd9b247c4e4355f37549d34c0
+      Hash: 9850bf2f38ba0ad858e34d195b618a12
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EventSystem
@@ -433,7 +463,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 8ad90ab74f26bb8f9088f5aaa057bd03
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GamePlayManager
@@ -575,9 +605,14 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MenuEnnemy
   platform: 5
   scenePathNames:
   - Assets/Scenes/Level1.unity
-  - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/MainMenu.unity
   playerPath: C:/Users/gwend/OneDrive/Bureau/LG,MV,NS,TT, shootergame/Shoot_Them_Up_GP2.exe

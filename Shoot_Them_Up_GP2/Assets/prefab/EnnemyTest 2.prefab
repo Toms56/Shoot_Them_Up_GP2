@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -7572896939316118875}
   m_Layer: 0
   m_Name: EnnemyTest 2
-  m_TagString: Ennemy
+  m_TagString: Ennemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  munition: []
+  munition:
+  - {fileID: 8470723009783663304, guid: aa9703ed25bd13642973c30882558948, type: 3}
 --- !u!61 &-2591093480133472535
 BoxCollider2D:
   m_ObjectHideFlags: 0

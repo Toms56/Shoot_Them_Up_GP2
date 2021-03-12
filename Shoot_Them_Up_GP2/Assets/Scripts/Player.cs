@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
 
     public Vector3 screenBounds, mousePointer;
 
-    private float fireRate = 0.1f, speed = 0.1f, time, objectWitdh, objectHeight;
+    private float fireRate = 0.3f, speed = 0.1f, time, objectWitdh, objectHeight;
     private Vector3 shootOffSet = new Vector3(0, 0.3f, 0);
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
         mousePointer = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         if (transform.position != mousePointer)
         {
-            transform.position = Vector3.Lerp(transform.position, mousePointer, Time.deltaTime * speed * 8f);
+            transform.position = Vector3.Lerp(transform.position, mousePointer - new Vector3(0, 0, mousePointer.z), Time.deltaTime * speed * 8f);
 
         }
         if (Input.GetKey(KeyCode.Space))
@@ -39,7 +39,6 @@ public class Player : MonoBehaviour
                 time = Time.time + fireRate;
             }
         }
-
         if (Input.GetKey(KeyCode.Escape))
         {
             SceneManager.LoadScene(1);
@@ -54,12 +53,16 @@ public class Player : MonoBehaviour
         transform.position = viewPos;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(gameObject.tag == "Ennemy")
+        if(collision.gameObject.tag != "HeroBullet")
+        {
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.TryGetComponent<Ennemy>(out Ennemy ennemy))
         {
             GamePlayManager.Instance.score -= 10;
-            Destroy(collision.gameObject);
+            GamePlayManager.nbr -= 1;
         }
     }
 }

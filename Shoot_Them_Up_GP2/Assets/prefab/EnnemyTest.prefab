@@ -97,7 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  munition: []
+  munition:
+  - {fileID: 8470723009783663304, guid: aa9703ed25bd13642973c30882558948, type: 3}
 --- !u!61 &-2591093480133472535
 BoxCollider2D:
   m_ObjectHideFlags: 0

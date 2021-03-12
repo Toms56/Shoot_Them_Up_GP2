@@ -9,6 +9,7 @@ public class GamePlayManager : MonoBehaviour
     public static GamePlayManager Instance;
     public Text scoreText;
     public float score;
+    public static float nbr = 0;
     // Start is called before the first frame update
     private void Awake()
     {
