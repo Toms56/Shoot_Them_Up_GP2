@@ -44,7 +44,7 @@ public class GamePlayManager : MonoBehaviour
             Time.timeScale = 0;
         }
 
-        if (Input.GetKey(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             if (pause == true)
             {

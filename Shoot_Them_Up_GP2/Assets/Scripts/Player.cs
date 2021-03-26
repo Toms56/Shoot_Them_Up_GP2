@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
 
     public int playerMaxHealthPoint, CurrentplayerHealth;
 
-    private float fireRate = 0.3f, speed = 0.1f, time, objectWitdh, objectHeight;
+    private float fireRate = 0.7f, speed = 0.1f, time, objectWitdh, objectHeight;
     private Vector3 shootOffSet = new Vector3(0, 0.3f, 0);
     // Start is called before the first frame update
     void Start()

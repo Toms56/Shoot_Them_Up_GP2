@@ -6,7 +6,7 @@ public class Spawner : MonoBehaviour
 {
     public GameObject[] Ennemy;
     private bool moveLeft = false;
-    private float speed = 3f, delay = 2f, time;
+    private float speed = 3f, delay = 1f, time;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +16,7 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GamePlayManager.nbr < 3)
+        if(GamePlayManager.nbr < 6)
         {
             if(Time.time > time)
             {

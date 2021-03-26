@@ -7,6 +7,7 @@ public class Ennemy : MonoBehaviour
     [SerializeField]
     float speed = 5f;
     public GameObject[] munition;
+    [SerializeField] GameObject impactEffet;
     private bool moveLeft = false;
     Vector3 offset = new Vector3(0, -2, 0);
     float repeatRate;
@@ -65,6 +66,8 @@ public class Ennemy : MonoBehaviour
             GamePlayManager.nbr -= 1;
             GamePlayManager.Instance.score += 50;
             Destroy(collision.gameObject);
+            GameObject effectIns = Instantiate(impactEffet, transform.position, transform.rotation);
+            Destroy(effectIns, 0.5f);
             Destroy(gameObject);
         }
     }
